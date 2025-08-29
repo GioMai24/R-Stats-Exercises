@@ -1,0 +1,7 @@
+model {
+    for (i in 1:length(X)) {X[i] ~ dnorm(m, 1 / s2)}
+    m ~ dunif(-10, 30)
+    s ~ dunif(0, 50)
+    s2 <- s^2
+    ms <- m / s
+}

@@ -1,0 +1,7 @@
+model {
+    for (i in 1:length(X)) {
+        ll[i] <- log(a - 1) - log(10) - a * log(X[i]/10)
+        pt[i] ~ dpois(1e4 - ll[i])
+        }
+    a ~ dunif(1.01, 10)
+}
